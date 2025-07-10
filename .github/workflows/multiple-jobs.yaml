@@ -1,8 +1,8 @@
 name: Multiple Jobs
 
 on:
-  push:
-
+  push
+  
 jobs:
     Checkout_job:
         runs-on: ubuntu-latest
@@ -19,15 +19,27 @@ jobs:
     test_job:
         runs-on: ubuntu-latest
         steps:
-        - name: Read files
+        - name: Install the Cowsay Library
           run: |
            sudo apt-get update && sudo apt-get install cowsay -y
            cowsay -f dragon "Run for cover page, I am a crazy CAAAA....TTTTT" > dragon.txt
-
+        
+        - name: Upload the Dragon text file
+          uses: actions/upload-artifact@v4
+          with:
+               name: Uploads the dragon text file
+               path: neelesh/dragon.txt
+          
     deploy_job:
         needs: test_job
         runs-on: ubuntu-latest
         steps:
+        - name: Download the Dragon text file
+          uses: actions/download-artifact@v4
+          with:
+               name: Downloads the dragon text file
+               path: neelesh/dragon.txt
+               
         - name: Deploy Job
           run: cat dragon.txt
 
