@@ -1,8 +1,7 @@
 name: Generate ASCII Artwork with cowsay library
 
-on: 
-    push
-
+on: push  
+    
 jobs:
     ascii_artwork_job:
         runs-on: ubuntu-latest
