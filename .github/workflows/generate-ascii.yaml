@@ -4,7 +4,7 @@ on:
     push
 
 jobs:
-    ASCII_Artwork:
+    ascii_artwork_job:
         runs-on: ubuntu-latest
         steps:
         - name: checkout-stage
@@ -14,7 +14,7 @@ jobs:
           run: sudo apt-get install cowsay -y
 
         - name: Executes cowasy CMD
-          run: cowsay -f cat " Run for cover page, I am a crazy CAAAA....TTTTT" > cat.txt
+          run: cowsay -f " Run for cover page, I am a crazy CAAAA....TTTTT" > cat.txt
 
         - name: Test file exists
           run: grep -i "cat" cat.txt
