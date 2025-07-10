@@ -13,13 +13,13 @@ jobs:
           run: sudo apt-get install cowsay -y
 
         - name: Executes cowasy CMD
-          run: cowsay -f cat "Run for cover page, I am a crazy CAAAA....TTTTT" > cat.txt
+          run: cowsay -f dragon "Run for cover page, I am a crazy CAAAA....TTTTT" > dragon.txt
 
         - name: Test file exists
-          run: grep -i "cat" cat.txt
+          run: grep -i "dragon" dragon.txt
 
         - name: Read File
-          run: cat cat.txt
+          run: dragon.txt
 
         - name: List Repo Files
           run: ls -ltra
