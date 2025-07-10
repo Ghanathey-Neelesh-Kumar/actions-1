@@ -9,12 +9,18 @@ jobs:
         - name: Checking out the Code from the repository
           uses: actions/checkout@v4
 
-        - name: Welcome Mesaage
-          run: echo "My first Github Actions Job"
+        - name: List and Read Files
+          run: |
+              echo "My first Github Actions Job"
+              ls -ltra
+              cat README.md
 
-        - name: list Files
-          run: ls
+        - name: Genearate ASCII Code
+          run: cowsay -f penguin "Run for cover, I am cute Penguin" >> penguin.txt
+              
+        # - name: list Files
+        #   run: ls
 
-        - name: Read Files
-          run: cat README.md
+        # - name: Read Files
+        #   run: cat README.md
           
