@@ -1,27 +1,25 @@
-name: Generate ASCII Artwork with cowsay library
+name: Generate ASCII Artwork with cowsay
 
-on: push  
-    
+on:
+  push:
+
 jobs:
-    ascii_artwork_job:
-        runs-on: ubuntu-latest
-        steps:
-        - name: checkout-stage
-          uses: actions/checkout@v4
+  ascii_artwork_job:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
 
-        - name: Installation of cowsay Library
-          run: sudo apt-get install cowsay -y
+      - name: Install cowsay
+        run: sudo apt-get update && sudo apt-get install cowsay -y
 
-        - name: Executes cowasy CMD
-          run: cowsay -f dragon "Run for cover page, I am a crazy CAAAA....TTTTT" > dragon.txt
+      - name: Create ASCII artwork with dragon
+        run: cowsay -f dragon "Run for cover page, I am a crazy CAAAA....TTTTT" > dragon.txt
 
-        - name: Test file exists
-          run: grep -i "dragon" dragon.txt
+      - name: Validate artwork file
+        run: |
+          grep -i "dragon" dragon.txt
+          cat dragon.txt
 
-        - name: Read File
-          run: dragon.txt
-
-        - name: List Repo Files
-          run: ls -ltra
-          
-          
+      - name: List repo files
+        run: ls -ltra
