@@ -1,4 +1,4 @@
-name: Generate ASCII Artwork with cowsay
+name: Multiple Jobs
 
 on:
   push:
