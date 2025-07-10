@@ -25,6 +25,7 @@ jobs:
            cowsay -f dragon "Run for cover page, I am a crazy CAAAA....TTTTT" > dragon.txt
 
     deploy_job:
+        needs: test_job
         runs-on: ubuntu-latest
         steps:
         - name: Deploy Job
