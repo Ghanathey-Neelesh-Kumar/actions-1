@@ -22,6 +22,6 @@ jobs:
           run: cat cat.txt
 
         - name: List Repo Files
-          uses: ls -ltra
+          run: ls -ltra
           
           
