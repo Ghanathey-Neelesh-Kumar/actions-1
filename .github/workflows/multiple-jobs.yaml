@@ -28,7 +28,7 @@ jobs:
           uses: actions/upload-artifact@v4
           with:
                name: dragon-text-file
-               path: neelesh/dragon.txt
+               path: dragon.txt
           
     deploy_job:
         needs: test_job
