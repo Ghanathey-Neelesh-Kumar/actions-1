@@ -14,4 +14,6 @@ jobs:
         run: ls -ltra
 
       - name: Executing a Shell Script
-        run:  ./ascii-gen.sh
+        run: |
+          chmod +x /workflows/ascii-gen.sh
+          ./workflows/ascii-gen.sh
