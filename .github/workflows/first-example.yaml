@@ -15,10 +15,10 @@ jobs:
               ls -ltra
               cat README.md
 
-        - name: Genearate ASCII Code
-          run: cowsay -f penguin "Run for cover, I am cute Penguin" >> penguin.txt
+        # - name: Genearate ASCII Code
+        #   run: cowsay -f penguin "Run for cover, I am cute Penguin" >> penguin.txt
               
-        # - name: list Files
+        # # - name: list Files
         #   run: ls
 
         # - name: Read Files
