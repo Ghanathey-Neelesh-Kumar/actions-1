@@ -18,7 +18,7 @@ jobs:
 
       - name: Validate artwork file
         run: |
-          grep -i "dragon" dragon.txt
+          grep -i "dragon"
           cat dragon.txt
 
       - name: List repo files
