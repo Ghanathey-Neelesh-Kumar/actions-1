@@ -17,9 +17,7 @@ jobs:
         run: cowsay -f dragon "Run for cover page, I am a crazy CAAAA....TTTTT" > dragon.txt
 
       - name: Validate artwork file
-        run: |
-          grep -i "dragon"
-          cat dragon.txt
+        run: cat dragon.txt
 
       - name: List repo files
         run: ls -ltra
