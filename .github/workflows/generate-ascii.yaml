@@ -1,0 +1,28 @@
+name: Generate ASCII Artwork with cowsay library
+
+on: 
+    push
+
+jobs:
+    ASCII_Artwork:
+        runs-on: ubuntu-latest
+        steps:
+        - name: checkout-stage
+          uses: actions/checkout@v2
+
+        - name: Installation of cowsay Library
+          run: sudo apt-get install cowsay -y
+
+        - name: Executes cowasy CMD
+          run: cowsay -f cat " Run for cover page, I am a crazy CAAAA....TTTTT" > cat.txt
+
+        - name: Test file exists
+          run: grep -i "cat" cat.txt
+
+        - name: Read File
+          run: cat cat.txt
+
+        - name: List Repo Files
+          uses: ls -ltra
+          
+          
