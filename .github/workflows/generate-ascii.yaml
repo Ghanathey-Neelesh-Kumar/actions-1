@@ -13,7 +13,7 @@ jobs:
       - name: List repo files
         run: ls -ltra
 
-      - name: Executing a Shell Script
+      - name: Make script executable and run it
         run: |
-          chmod +x ascii-gen.sh
-          .ascii-gen.sh
+          chmod +x .github/workflows/ascii-gen.sh
+          .github/workflows/ascii-gen.sh
