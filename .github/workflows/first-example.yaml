@@ -6,6 +6,9 @@ jobs:
     first_job:
         runs-on: ubuntu-latest
         steps:
+        - name: Checking out the Code from the repository
+          uses: actions/version@v4
+          
         - name: Welcome Mesaage
           run: echo "My first Github Actions Job"
 
