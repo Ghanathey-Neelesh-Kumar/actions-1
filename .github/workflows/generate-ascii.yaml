@@ -10,14 +10,14 @@ jobs:
       - name: Checkout repo
         uses: actions/checkout@v4
 
-      - name: Install cowsay
-        run: sudo apt-get update && sudo apt-get install cowsay -y
-
-      - name: Create ASCII artwork with dragon
-        run: cowsay -f dragon "Run for cover page, I am a crazy CAAAA....TTTTT" > dragon.txt
-
-      - name: Validate artwork file
-        run: cat dragon.txt
-
       - name: List repo files
         run: ls -ltra
+
+      - name: Executing a Shell Script
+        run: |
+            chmod +x ascii-gen.sh
+            ./ascii-gen.sh
+
+      
+
+     
